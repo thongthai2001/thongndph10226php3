@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\DB;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,19 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/admin/users', function (){
+   $listUser = DB::table('users')->get();
+    // dd($listUser); 
+    return view('admin/users/index', [
+        'data' => $listUser,
+    ]);
+});
+
+Route::view('/admin/users/create', '/admin/users/create');
+
+Route::post('/users', function(){
+    dd($_REQUEST);
+});
+
+route::view('/layout', 'layout');
