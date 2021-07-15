@@ -24,12 +24,28 @@ Route::get('/admin/users', function (){
     return view('admin/users/index', [
         'data' => $listUser,
     ]);
-});
+})->name('admin.users.index');
+//tra ve giao dien
 
-Route::view('/admin/users/create', '/admin/users/create');
+Route::view('admin/users/create', '/admin/users/create') ->name('admin.users.create');
 
-Route::post('/users', function(){
-    dd($_REQUEST);
-});
+Route::post('admin/users/store', function(){
+    return redirect()->route('admin.users.index');
+})->name('admin.users.store');
 
-route::view('/layout', 'layout');
+Route::get('admin/users/edit/{id}', function ($id){
+   $data = DB::table('users')->find($id);
+
+return view('admin.users.edit', [
+    'data' => $data,
+]);
+})->name('admin.users.edit');
+
+Route::post('admin/users/update/{id}', function (){
+//nhap du lieu va luu vao db
+})->name('admin.users.update');
+
+Route::post('admin/users/delete/{id}', function (){
+    //xoa du lieu theo id
+    return redirect()->route('admin.users.index');
+    })->name('admin.users.delete');

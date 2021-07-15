@@ -2,7 +2,8 @@
 
 @section('title', 'Create User')
 @section('contents')
-<form method="POST" action="/admin/users">
+<form method="POST" action="{{route('admin.users.store')}}">
+    @csrf
     <div>
         <label>Name</label>
         <input class="mt-3 form-control" type="text" name="name" />
