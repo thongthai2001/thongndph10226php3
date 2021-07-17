@@ -33,6 +33,6 @@
         </select>
     </div>
 
-    <button class="mt-3 btn btn-primary">Create</button>
+    <button class="mt-3 btn btn-primary">Update</button>
 </form>
 @endsection

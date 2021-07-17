@@ -56,9 +56,7 @@
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancle</button>
         <form action="{{ route('admin.users.delete', ['id' => $item->id ]) }}" method="POST">
                 @csrf
-
-        
-        <button type="button" class="btn btn-primary">Delete</button>
+        <button type="submit" class="btn btn-primary">Delete</button>
      </form>
       </div>
     </div>
