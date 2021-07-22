@@ -6,7 +6,7 @@
 @section('contents')
 <div class="row mt-3">
     <div class="col-6">
-        <a class="btn btn-success" href="{{ route('admin.users.create') }}">create</a>
+        <a class="btn btn-success" href="{{ route('admin.categories.create') }}">create</a>
     </div>
 </div>
 @if (!empty($data))
@@ -16,31 +16,23 @@
       <tr>
           <td>ID</td>
           <td>Name</td>
-          <td>Email</td>
-          <td>Address</td>
-          <td>Gender</td>
-          <td>Role</td>
           <td colspan="2">Action</td>
           
 
       </tr>
   </thead>
   <tbody>
-      @foreach($data as $item)
+      @foreach($data as $cate)
     <tr>
-        <td>{{$item->id}}</td>
-        <td>{{$item->name}}</td>
-        <td>{{$item->email}}</td>
-        <td>{{$item->address}}</td>
-        <td>{{$item->gender  == config('common.user.gender.male') ? "Nam" : "Nữ" }}</td>
-        <td>{{$item->role == config('common.user.role.user') ? "user" : "admin"}}</td>
+        <td>{{$cate->id}}</td>
+        <td>{{$cate->name}}</td>
         <td>
-            <a class="btn btn-primary" href="{{ route('admin.users.edit', [ 'id' => $item->id ]) }}">Update</a>
+            <a class="btn btn-primary" href="{{ route('admin.categories.edit', [ 'id' => $cate->id ]) }}">Update</a>
         </td>
         <td>
-            <button class="btn btn-danger"  data-toggle="modal" data-target="#confirm_delete{{ $item->id }}" href="">Delete</button>
+            <button class="btn btn-danger"  data-toggle="modal" data-target="#confirm_delete{{ $cate->id }}" href="">Delete</button>
 
-            <div class="modal fade"  id="confirm_delete{{ $item->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade"  id="confirm_delete{{ $cate->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -54,7 +46,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancle</button>
-        <form action="{{ route('admin.users.delete', ['id' => $item->id ]) }}" method="POST">
+        <form action="{{ route('admin.categories.delete', ['id' => $cate->id ]) }}" method="POST">
                 @csrf
         <button type="submit" class="btn btn-primary">Delete</button>
      </form>

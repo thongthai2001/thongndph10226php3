@@ -11,6 +11,14 @@ class Product extends Model
 
     //chỉ định tên table trong TH k đặt theo quy tắc eloquent
     protected $table = 'products';
+    protected $fillable = [
+        'name',
+        'price',
+        'quantity',
+        'category_id',
+        'image',
+        
+    ];
 
     //mặc định eloquent coi primary key là cột id
     protected $primaryKey = 'id';

@@ -22,7 +22,7 @@
             <option value="1"
                 {{ $data->gender == 1 ? "selected" : "" }}>Male</option>
             <option value="0"
-            {{ $data->gender == 0 ? "selected" : "" }}>Male</option>>Female</option>
+            {{ $data->gender == 0 ? "selected" : "" }}>Female</option>>Female</option>
         </select>
     </div>
     <div>
