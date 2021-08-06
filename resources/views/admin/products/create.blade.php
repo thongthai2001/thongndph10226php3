@@ -2,33 +2,41 @@
 
 @section('title', 'Create product')
 @section('contents')
-<form method="POST" action="{{route('admin.products.store')}}">
+<form method="POST" action="{{route('admin.products.store')}}" enctype="multipart/form-data">
     @csrf
     <div>
         <label>Name</label>
         <input class="mt-3 form-control" type="text" name="name" />
+        @error('name')
+            <span class="text-danger">{{ $message }}</span>
+        @enderror
     </div>
     <div>
-        <label>Email</label>
-        <input class="mt-3 form-control" type="email" name="email" />
+        <label>price</label>
+        <input class="mt-3 form-control" type="number" name="price" />
+        @error('price')
+            <span class="text-danger">{{ $message }}</span>
+        @enderror
     </div>
     <div>
-        <label>Address</label>
-        <input class="mt-3 form-control" type="text" name="address" />
+        <label>quantity</label>
+        <input class="mt-3 form-control" type="text" name="quantity" />
+        @error('quantity')
+            <span class="text-danger">{{ $message }}</span>
+        @enderror
     </div>
+   
     <div>
-        <label>Gender</label>
-        <select class="mt-3 form-control" name="gender">
-            <option value="1">Male</option>
-            <option value="0">Female</option>
-        </select>
+        <label>category_id</label>
+        <input class="mt-3 form-control" type="text" name="category_id" />
+        @error('category_id')
+            <span class="text-danger">{{ $message }}</span>
+        @enderror
     </div>
-    <div>
-        <label>Role</label>
-        <select class="mt-3 form-control" name="role">
-            <option value="0">User</option>
-            <option value="1">Admin</option>
-        </select>
+     <div>
+        <label>image</label>
+        <input class="mt-3 form-control" type="file" name="file_upload" />
+       
     </div>
 
     <button class="mt-3 btn btn-primary">Create</button>

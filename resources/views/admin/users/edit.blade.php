@@ -7,14 +7,23 @@
     <div>
         <label>Name</label>
         <input class="mt-3 form-control" type="text" value="{{ $data->name }}" name="name" />
+        @error('name')
+            <span class="text-danger">{{ $message }}</span>
+        @enderror
     </div>
     <div>
         <label>Email</label>
         <input class="mt-3 form-control" type="email" value="{{ $data->email }}" name="email" />
+        @error('email')
+            <span class="text-danger">{{ $message }}</span>
+        @enderror
     </div>
     <div>
         <label>Address</label>
         <input class="mt-3 form-control" type="text" value="{{ $data->address }}" name="address" />
+        @error('address')
+            <span class="text-danger">{{ $message }}</span>
+        @enderror
     </div>
     <div>
         <label>Gender</label>

@@ -19,8 +19,8 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
-        'address',
         'password',
+        'address',
         'gender',
         'role',
     ];
@@ -35,6 +35,11 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+    public function invoices(){
+        return $this->hasMany(Invoice::class, 'user_id', 'id');
+    }
+  
+
     /**
      * The attributes that should be cast to native types.
      *
@@ -43,4 +48,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    
+
+   // Mutato: set{AttibuteName}Attribute
+    // public function setPasswordAttribute($value){
+    //     $hashed = bcrypt($value);
+    //     $this->attributes['password'] = $hashed;
+    // }
 }

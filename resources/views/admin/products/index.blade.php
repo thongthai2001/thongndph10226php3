@@ -33,7 +33,9 @@
         <td>{{$pro->price}}</td>
         <td>{{$pro->quantity}}</td>
         <td>{{$pro->category_id}}</td>
-        <td>{{$pro->image}}</td>
+        <td>
+                <img src="{{asset('storage/' . $pro->image)}}" width="70">
+            </td>
         <td>
             <a class="btn btn-primary" href="{{ route('admin.products.edit', [ 'id' => $pro->id ]) }}">Update</a>
         </td>

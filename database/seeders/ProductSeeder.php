@@ -16,11 +16,12 @@ class ProductSeeder extends Seeder
     public function run()
     {
         $faker = FakerFactoryProduct::create();
-        for ($i=0 ; $i < 200 ; $i++ ) { 
+        $imgPath = $faker->image(storage_path('app/public/uploads/products'), $width = 640, $height = 280, 'cats', false);
+        for ($i=0 ; $i < 5 ; $i++ ) { 
             $data = [ // các cột cần fake dữ liệu
                 'name'=>$faker->name ,
                 'price'=>$faker->randomDigit  ,
-                'image'=>$faker->image ,
+                'image'=>"uploads/products/" . $imgPath,
                 'category_id'=>$faker->numberBetween($min = 1, $max = 90),
                 'quantity'=>$faker->randomDigit  ,
             ];
