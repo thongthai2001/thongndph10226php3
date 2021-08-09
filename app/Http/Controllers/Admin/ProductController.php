@@ -9,6 +9,7 @@ use App\Http\Requests\Admin\Product\ProductRequest;
 
 class ProductController extends Controller
 {
+
     public function index()
     {
         $product = Product::all();
@@ -71,4 +72,6 @@ class ProductController extends Controller
                          $product->delete();
                          return redirect()->route('admin.products.index');
     }
+
+  
 }
