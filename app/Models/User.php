@@ -51,9 +51,9 @@ class User extends Authenticatable
 
     
 
-   // Mutato: set{AttibuteName}Attribute
-    // public function setPasswordAttribute($value){
-    //     $hashed = bcrypt($value);
-    //     $this->attributes['password'] = $hashed;
-    // }
+    public function setPasswordAttribute($value) {
+        $hashed = bcrypt($value);
+
+        $this->attributes['password'] = $hashed;
+    }
 }

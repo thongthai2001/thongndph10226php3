@@ -54,9 +54,9 @@ class UserController extends Controller
     // Lấy toàn bộ sữ liệu gửi lên trừ _token dùng : request()->except("_token)
         $data = $request->except("_token");
 
-        // $data['password'] = "$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi";
+        $data['password'] = "123456";
         // User::Create($data);
-        $result = User::create($data);
+       
 
         if ($request->ajax() == true) {
             return response()->json([
@@ -64,6 +64,7 @@ class UserController extends Controller
                 'message' => 'ok'
             ]);
         }
+        $result = User::create($data);
 
         return redirect()->route('admin.users.index');
     }

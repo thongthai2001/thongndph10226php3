@@ -10,24 +10,18 @@
                     </button>
 
                     <button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".women">
-                        Women
+                        Áo phông trắng
                     </button>
 
                     <button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".men">
-                        Men
+                        Áo hot
                     </button>
 
                     <button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".bag">
-                        Bag
+                        Áo kẻ trắng
                     </button>
 
-                    <button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".shoes">
-                        Shoes
-                    </button>
-
-                    <button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".watches">
-                        Watches
-                    </button>
+                   
                 </div>
 
                 <div class="flex-w flex-c-m m-tb-10">
@@ -45,11 +39,10 @@
                 <!-- Search product -->
                 <div class="dis-none panel-search w-full p-t-10 p-b-15">
                     <div class="bor8 dis-flex p-l-15">
-                        <button class="size-113 flex-c-m fs-16 cl2 hov-cl1 trans-04">
-                            <i class="zmdi zmdi-search"></i>
-                        </button>
-
-                        <input class="mtext-107 cl2 size-114 plh2 p-r-15" type="text" name="search-product" placeholder="Search">
+                    <form action="{{ route('welcome') }}" method="get">
+        <input class="form-control col-4"  type="text"  name="keyword" value="{{ old('keyword') }}">
+        <button class="btn btn-primary mt-3">Tìm Kiếm</button>
+    </form>
                     </div>
                 </div>
 

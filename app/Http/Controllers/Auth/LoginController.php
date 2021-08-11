@@ -26,11 +26,11 @@ class LoginController extends Controller
          */
         $result = Auth::attempt($data);
 
-        // if ($result === false) {
-        //     session()->flash('error', 'Sai email hoặc mật khẩu');
+        if ($result === false) {
+            session()->flash('error', 'Sai email hoặc mật khẩu');
 
-        //     return back();
-        // }
+          
+        }
 
         $user = Auth::user();
 

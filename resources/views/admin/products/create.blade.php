@@ -27,8 +27,12 @@
     </div>
    
     <div>
-        <label>category_id</label>
-        <input class="mt-3 form-control" type="text" name="category_id" />
+        <label for="">category_id</label>
+    <select id="cars" class="form-select form-control-user" name="category_id" >
+                    @foreach($data as $c)
+                        <option  value="{{$c->id}}">{{$c->name}}</option>
+                    @endforeach
+                </select>
         @error('category_id')
             <span class="text-danger">{{ $message }}</span>
         @enderror

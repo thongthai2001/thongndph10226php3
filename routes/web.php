@@ -24,10 +24,17 @@ use App\Controllers\Auth\LoginController;
 Route::get('/', 'AdminController@index')->name('welcome');
 
 
+
 Route::get('login', 'Auth\LoginController@getLoginForm')->name('auth.getLoginForm');
 Route::post('login', 'Auth\LoginController@login')->name('auth.login');
 Route::get('logout', 'Auth\LoginController@logout')->name('auth.logout');
 Route::get('detail/{id}', 'AdminController@detail')->name('detail');
+Route::get('gio-hang', 'AdminController@cartDetail')->name('giohang');
+Route::get('cart/{id}', 'AdminController@addToCart')->name('cart');
+
+
+
+
 
 // Route::group([
 //     'middleware' => ['check_login'],

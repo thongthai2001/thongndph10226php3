@@ -5,10 +5,10 @@
 @endsection
 
 @section('contents')
-<div class="">
+<div class="mb-3" >
     <form action="{{ route('admin.users.index') }}" method="get">
         <input class="form-control col-4" type="text" name="keyword" value="{{ old('keyword') }}">
-        <button class="btn btn-primary">Tìm Kiếm</button>
+        <button class="btn btn-primary mt-3">Tìm Kiếm</button>
     </form>
 </div>
 

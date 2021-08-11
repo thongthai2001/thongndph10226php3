@@ -23,7 +23,9 @@ class Product extends Model
     //mặc định eloquent coi primary key là cột id
     protected $primaryKey = 'id';
 
-  
+    public function categories(){
+        return $this->belongsTo(Category::class, 'category_id');
+    }
 
    
 }
